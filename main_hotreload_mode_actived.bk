@@ -1,0 +1,41 @@
+import os
+from kaki.app import App
+from kivymd.app import MDApp
+from kivy.factory import Factory
+
+from kivy.core.window import Window
+
+
+
+class LiveApp(MDApp, App):
+    DEBUG = 1
+
+    KV_FILES = {
+        os.path.join(os.getcwd(), "telas/screenmanager.kv"),
+        os.path.join(os.getcwd(), "telas/telaPrincipal/telaPrincipal.kv"),
+        os.path.join(os.getcwd(), "telas/telaUSB/telaUSB.kv"),
+        os.path.join(os.getcwd(), "telas/telaBLE/telaBLE.kv"),
+        os.path.join(os.getcwd(), "telas/telaNFC/telaNFC.kv"),
+        os.path.join(os.getcwd(), "telas/telaNFC/telaNFC.kv"),
+    }
+
+    CLASSES = {
+        "MainScreenManager": "telas.screenmanager",
+        "TelaPrincipal": "telas.telaPrincipal.telaPrincipal",
+        "TelaUSB": "telas.telaUSB.telaUSB",
+        "TelaBLE": "telas.telaBLE.telaBLE",
+        "TelaNFC": "telas.telaNFC.telaNFC",
+    }
+
+    AUTORELOADER_PATHS = [
+        (".", {"recursive": True}),
+    ]
+
+    def build_app(self):
+        self.theme_cls.theme_style = 'Light'
+        Window.size = (362, 708)
+        return Factory.MainScreenManager()
+
+if __name__ == "__main__":
+    LiveApp().run()
+

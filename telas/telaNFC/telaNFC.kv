@@ -1,0 +1,22 @@
+<TelaNFC>
+    name: 'TelaNFC'
+    MDBoxLayout:
+        md_bg_color: "black"
+        orientation: 'vertical'
+        MDTopAppBar:
+            type: "small"
+            md_bg_color: self.theme_cls.secondaryContainerColor
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: "arrow-left"
+                    on_release: root.manager.current = 'TelaPrincipal'
+            MDTopAppBarTitle:
+                text: "NFC"
+
+        MDLabel:
+            text: "NFC"
+            halign: "center"
+            color: "white"
+            font_style: "Display"
+            role: "medium"
+            pos_hint: {"center_x": .5, "center_y": .74}

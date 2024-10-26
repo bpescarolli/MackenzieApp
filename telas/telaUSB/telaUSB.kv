@@ -1,0 +1,50 @@
+<TelaUSB>
+    name: 'TelaUSB'
+    FloatLayout:
+        md_bg_color: "black"
+        orientation: 'vertical'
+        MDTopAppBar:
+            type: "small"
+            pos_hint: {"center_x": .50, "center_y": .96}
+            md_bg_color: self.theme_cls.secondaryContainerColor
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: "arrow-left"
+                    on_release: root.manager.current = 'TelaPrincipal'
+            MDTopAppBarTitle:
+                text: "USB"
+
+        MDLabel:
+            id: status_label
+            text: "Waiting for USB device"
+            bold: "true"
+            color: "white"
+            font_size: "10dp"
+            pos_hint: {"center_x": .50, "center_y": .85}
+            halign: "center"
+
+        MDLabel:
+            id: data_label
+            text: "Data: "
+            bold: "true"
+            color: "orange"
+            font_size: "10dp"
+            pos_hint: {"center_x": .50, "center_y": .55}
+
+        MDButton:
+            on_release: root.connect_usb()
+            pos_hint: {"center_x": .50, "center_y": .30}
+            MDButtonText:
+                text: "Connect to USB"
+                bold: "true"
+                color: "black"
+                font_size: "10dp"
+
+        MDButton:
+            on_release: root.send_data()
+            pos_hint: {"center_x": .50, "center_y": .20}
+            MDButtonText:
+                text: "Send Data"
+                bold: "true"
+                color: "black"
+                font_size: "10dp"

@@ -1,0 +1,30 @@
+from kivymd.app import MDApp
+from kivymd.uix.screenmanager import MDScreenManager
+
+from telas.telaPrincipal.telaPrincipal import TelaPrincipal
+
+from telas.telaUSB.telaUSB import TelaUSB
+from telas.telaBLE.telaBLE import TelaBLE
+from telas.telaNFC.telaNFC import TelaNFC
+
+class LiveApp(MDApp):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        # subir todos os arquivos KV de todas as telas em uma só linha
+        self.load_all_kv_files(self.directory)
+
+        #screemanager
+        self.sm = MDScreenManager()
+
+    def build(self):
+        self.sm.add_widget(TelaPrincipal())
+        self.sm.add_widget(TelaUSB())
+        self.sm.add_widget(TelaBLE())
+        self.sm.add_widget(TelaNFC())
+
+        return self.sm
+
+if __name__ == "__main__":
+    app = LiveApp()
+    app.run()

@@ -1,0 +1,111 @@
+<TelaPrincipal>
+    name: 'TelaPrincipal'
+    FloatLayout:
+
+        Image:
+            source: 'images/mackLogo.png'
+            pos_hint: {"center_x": .5, "center_y": .90}
+
+        MDLabel:
+            text: "TCC 2024"
+            halign: "center"
+            color: "white"
+            font_style: "Display"
+            role: "medium"
+            pos_hint: {"center_x": .5, "center_y": .74}
+
+        MDLabel:
+            id : "txtTitulo1"
+            text: "Interface do potenciostato para smartphone"
+            halign: "center"
+            color: "white"
+            font_style: "Title"
+            role: "medium"
+            pos_hint: {"center_x": .5, "center_y": .68}
+
+        MDLabel:
+            id : "txtTitulo3"
+            text: "Bruno Pescarolli"
+            halign: "center"
+            color: "white"
+            font_style: "Title"
+            bold: 'true'
+            role: "small"
+            pos_hint: {"center_x": .5, "center_y": .62}
+
+        MDButton:
+            id: nfcButton
+            size_hint: None, None
+            size: sp(115), sp(115)
+            md_bg_color: 1, 1, 1, 1  # White background
+            pos_hint: {"center_x": .50, "center_y": .12}
+            on_release: root.manager.current = 'TelaNFC'
+            MDButtonIcon:
+                icon: "nfc-variant"
+                color: "black"
+                size_hint: None, None
+                size: sp(115), sp(115)
+                font_size: "48dp"
+                pos_hint: {"center_x": .5, "center_y": .5}
+            MDButtonText:
+                text: "NFC"
+                bold: "true"
+                color: "black"
+                pos_hint: {"center_x": .5, "center_y": .12}
+
+
+        MDButton:
+            id: bleButton
+            size_hint: None, None
+            size: sp(115), sp(115)
+            md_bg_color: 1, 1, 1, 1  # White background
+            pos_hint: {"center_x": .50, "center_y": .30}
+            on_release: root.manager.current = 'TelaBLE'
+            MDButtonIcon:
+                icon: "bluetooth-connect"
+                color: "black"
+                font_size: "48dp"
+                pos_hint: {"center_x": .5, "center_y": .5}
+            MDButtonText:
+                text: "BLE"
+                bold: "true"
+                color: "black"
+                font_size: "10dp"
+                pos_hint: {"center_x": .5, "center_y": .12}
+
+        MDButton:
+            id: usbButton
+            size_hint: None, None
+            size: sp(115), sp(115)
+            md_bg_color: 1, 1, 1, 1  # White background
+            pos_hint: {"center_x": .50, "center_y": .48}
+            on_release: root.manager.current = 'TelaUSB'
+            MDButtonIcon:
+                icon: "usb"
+                color: "black"
+                font_size: "48dp"
+                pos_hint: {"center_x": .5, "center_y": .5}
+            MDButtonText:
+                text: "USB"
+                bold: "true"
+                color: "black"
+                font_size: "10dp"
+                pos_hint: {"center_x": .5, "center_y": .12}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
